@@ -1,5 +1,5 @@
 # Projeto Topazio
-# Curso: ADS Vespertinp
+# Curso: ADS Vespertino
 # Ciclo: 5°
 # Disciplina: Laboratório de Engenharia de Software
 
