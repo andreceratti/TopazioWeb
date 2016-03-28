@@ -1,5 +1,6 @@
 # Projeto Topazio
 Este é o repositorio do grupo Topazio de ADS onde estamos desenvolvendo um site e um APP de compras/vendas de medicamentos de farmácias de manipulação.
+Esta repositorio é voltado para versão WEB do projeto.
 
 # Curso: ADS Vespertino
 - Ciclo: 5°
