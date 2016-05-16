@@ -19,7 +19,7 @@
             $id=$_GET["alterar"];
             $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario"
+                        . " FROM USUARIO"
                         . " WHERE id_usuario = ".$id.";";
             $info = pesquisaAlterar($SQL);
             ?>

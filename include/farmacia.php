@@ -1,6 +1,6 @@
 <?php
     function cadastrarFarmacia(){
-        $SQL = "INSERT INTO farmacia"
+        $SQL = "INSERT INTO FARMACIA"
                 . " (USUARIO_id_usuario, nm_farmacia, cd_telefone_comercial_farmacia,"
                 . " cd_telefone_celular_farmacia,"
                 . " nm_lougradouro, nm_bairro, nm_cidade, nm_estado,"

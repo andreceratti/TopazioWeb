@@ -103,7 +103,7 @@
         function insertFarmacia($SQL){
             global $db;
             $ID;
-            $BUSCA_ID = "SELECT id_usuario FROM usuario"
+            $BUSCA_ID = "SELECT id_usuario FROM USUARIO"
                     . " WHERE nm_login_email = ?;";
             
             if($stmt = $db->prepare($BUSCA_ID)){

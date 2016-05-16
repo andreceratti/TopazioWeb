@@ -1,6 +1,6 @@
 <?php
     function cadastrarUsuario($tipo){
-        insertUsuario("INSERT INTO usuario" 
+        insertUsuario("INSERT INTO USUARIO" 
                 . " (nm_login_email, nm_senha, ic_situacao_conta_ativa_desativada,"
                 . " nm_pergunta_senha,nm_dica_senha,ds_tipo_usuario)"
                 . " VALUES" //
@@ -17,35 +17,35 @@
             if($c_ativa=="ativo"){
                 $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario"
+                        . " FROM USUARIO"
                         . " WHERE ic_situacao_conta_ativa_desativada = 1;";
             }else if(($c_ativa=="naoativo")){
                 $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario"
+                        . " FROM USUARIO"
                         . " WHERE ic_situacao_conta_ativa_desativada = 0;";                
             }else{
                 $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario;";
+                        . " FROM USUARIO;";
             }
         }else{
             if($c_ativa=="ativo"){
                 $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario"
+                        . " FROM USUARIO"
                         . " WHERE ic_situacao_conta_ativa_desativada = 1"
                         . " AND nm_login_email = ?;";
             }else if(($c_ativa=="naoativo")){
                 $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario"
+                        . " FROM USUARIO"
                         . " WHERE ic_situacao_conta_ativa_desativada = 0"
                         . " AND nm_login_email = ?;";
             }else{
                 $SQL = "SELECT id_usuario, nm_login_email,"
                         . " ic_situacao_conta_ativa_desativada, ds_tipo_usuario"
-                        . " FROM usuario"
+                        . " FROM USUARIO"
                         . " WHERE nm_login_email = ?;";
             }
         }
@@ -53,18 +53,18 @@
     }
     function deletarUsuario(){
         if (!empty($_GET["excluir"])) $id = ($_GET["excluir"]);
-        dropUsuario("DELETE FROM usuario WHERE id_usuario = " . $id . ";");
+        dropUsuario("DELETE FROM USUARIO WHERE id_usuario = " . $id . ";");
     }
     function alterarUsuario(){
         if (!empty($_GET['senha'])){
-            $SQL = 'UPDATE usuario SET nm_login_email = ?, nm_senha = ?,'
+            $SQL = 'UPDATE USUARIO SET nm_login_email = ?, nm_senha = ?,'
                     . ' ic_situacao_conta_ativa_desativada = ?,'
                     . ' ds_tipo_usuario = ? WHERE id_usuario = ' . $_GET['id']
                     . ' ;';
             $senha = TRUE;
         }
         else {
-            $SQL = 'UPDATE usuario SET nm_login_email = ?,'
+            $SQL = 'UPDATE USUARIO SET nm_login_email = ?,'
                     . ' ic_situacao_conta_ativa_desativada = ?,'
                     . ' ds_tipo_usuario = ? WHERE id_usuario = ' . $_GET['id']
                     . ' ;';
