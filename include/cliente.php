@@ -2,15 +2,16 @@
     session_start();
     
     function login(){
-
+        $user = new stdClass();
         $user = selectUsuario("SELECT id_usuario, nm_login_email, nm_senha,"
                 . " ic_situacao_conta_ativa_desativada,"
                 . " nm_login_email, nm_dica_senha, ds_tipo_usuario"
                 . " FROM usuario"
                 . " WHERE nm_login_email = ? AND nm_senha = ?;",TRUE);
-        $_SESSION["usuario.login"] = $user->login;
-        $_SESSION["usuario.tipo"] = $user->tipo;
-        $_SESSION["loginAtivo"] = TRUE;
+        if (!empty($user->login)) $_SESSION["usuario.login"] = $user->login;
+        else echo "<h1>Usuario ou senha incorreta</h1>";
+        if (!empty($user->tipo)) $_SESSION["usuario.tipo"] = $user->tipo;
+        if (!empty($user->login)) $_SESSION["loginAtivo"] = TRUE;
     }
    
     function logout(){
