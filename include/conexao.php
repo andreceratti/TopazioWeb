@@ -129,14 +129,18 @@
                 $bairro = $_GET['bairro'];
                 $cidade = $_GET['cidade'];
                 $estado = $_GET['estado'];
-                $hr_fim= $_GET['inicio_funcionamento'];
                 $hr_ini= $_GET['final_funcionamento'];
+                $hr_fim= $_GET['inicio_funcionamento'];
+                
                 
                 $stmt->execute();
+                if ($db->affected_rows>0) echo 'Cadastro realizado com sucesso';
+                else echo 'Erro em cadastro de farmacia';
                 $stmt->close();
                 $db->close();
                 
-                echo '<h1>Cadastro Concluido</h1>';
+            } else {
+                echo 'Erro.: ' . $db->error;
             }
             
         }

@@ -5,7 +5,7 @@
                 . " cd_telefone_celular_farmacia,"
                 . " nm_lougradouro, nm_bairro, nm_cidade, nm_estado,"
                 . " hr_inicio_funcionamento, hr_final_funcionamento)"
-                . "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                . "VALUES (?,?,?,?,?,?,?,?,?,?)";
         //
         insertFarmacia($SQL);
     }
