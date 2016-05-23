@@ -14,6 +14,15 @@
     }
     $pasta = 'uploads/';
     
+    function mostrarPedidos(){
+        echo '<table border="1"><tr>';
+        echo '<th>Pedido</th>';
+        echo '<th>Data de abertura</th>';
+        echo '<th>Status</th>';
+        echo '</tr>';
+        selectPedidos();
+        echo '</table>';
+    }
 
     if (isset($nomearquivo)){
         if (!empty($nomeantigo)){
