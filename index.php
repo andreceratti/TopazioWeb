@@ -36,7 +36,7 @@
                     <P>
                         <span><a href="cliente/cadastrar.php">Cadastrar Cliente</a></span>
                         <span><a href="farmacia/cadastrar.php">Cadastrar Farmacia</a></span>
-                        <span><a href="cliente/pesquisar.php">Pesquisar Usuario</a></span>
+                        <span><a href="usuario/pesquisar.php">Pesquisar Usuario</a></span>
                     </P>
                     <?php elseif(($_SESSION["usuario.tipo"]=='2')): ?>
                         <p>Area de Cliente</p>
