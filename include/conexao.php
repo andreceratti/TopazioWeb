@@ -234,7 +234,7 @@
             global $db;
             $cliente = new stdClass();
             $SQL = "SELECT * FROM CLIENTE"
-                    . "WHERE USUARIO_id_usuario = ?;";
+                    . " WHERE USUARIO_id_usuario = ?;";
             if ($stmt=$db->prepare($SQL)){
                 $stmt->bind_param('i', $id);
                 $stmt->execute();
@@ -258,5 +258,30 @@
                 return $cliente;
             }
         }
-        
+
+        function insertPedido($SQL, $nomeArquivo){
+            global $db;
+            
+            if(!empty($_SESSION['usuario.id'])){
+                $id = $_SESSION['usuario.id'];
+                $cliente = new stdClass();
+                $cliente = selectCliente($id);
+/*                    $SQL = "INSERT INTO PEDIDO"
+                            . " (CLIENTE_USUARIO_id_usuario, CLIENTE_id_cliente,"
+                            . " dt_abertura_pedido,"
+                            . " ic_delivery_sim_nao, im_foto_receita,"
+                            . " ds_status_pedidos, ic_forma_pagamento_dinheiro_cartao)"
+                            . " VALUES (?,?,NOW(),'0',?,'Esperando Orçamento',?);";*/
+                if ($stmt = $db->prepare($SQL)){
+                    $stmt->bind_param('iiss', $idUsuario, $idCliente, $nomeArquivo, $pagamento);
+                    $idUsuario = $id;
+                    $idCliente = $cliente->id;
+                    $pagamento = $_POST['pagamento'];
+                    
+                    $stmt->execute();
+                    if ($db->affected_rows>0) echo '<h1>Pedido realizado com sucesso</h1>';
+                    $stmt->close();
+                }
+            }
+        }
 ?>
