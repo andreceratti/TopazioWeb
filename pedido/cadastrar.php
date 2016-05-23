@@ -21,5 +21,9 @@
             <p><input type="submit" value="Enviar"/> </p>
         </form>
         <a href="../index.php">Voltar</a>
+        <?php 
+            global $db;
+            $db->close();
+        ?>
     </body>
 </html>
