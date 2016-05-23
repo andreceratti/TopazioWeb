@@ -17,12 +17,16 @@
 
     if (isset($nomearquivo)){
         if (!empty($nomeantigo)){
-            if($tipo[1]=='jpg'||$tipo[1]=='jpeg'||$tipo[1]=='png'){
-                move_uploaded_file($nomeTemporario, $pasta.$nomearquivo.'.'.$tipo[1]);
-                echo 'Arquivo enviado com sucesso<br>';
-              } else {
-                echo 'Tipo de arquivo incompativel<br>';
-              }
+            if (!$tamanho>3048){
+                if($tipo[1]=='jpg'||$tipo[1]=='jpeg'||$tipo[1]=='png'){
+                    move_uploaded_file($nomeTemporario, $pasta.$nomearquivo.'.'.$tipo[1]);
+                    echo 'Arquivo enviado com sucesso<br>';
+                } else {
+                    echo 'Aviso: Tipo de arquivo incompativel<br>';
+                }
+            } else {
+                echo 'Aviso: Arquivo muito grande.';
+            }
         } else {
             echo '<h3>Por favor selecione uma imagem para enviar</h3>';
         }
