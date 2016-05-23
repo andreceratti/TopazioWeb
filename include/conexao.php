@@ -229,6 +229,34 @@
                 $db->close();
             }
         }
-            
-
+        
+        function selectCliente($id){
+            global $db;
+            $cliente = new stdClass();
+            $SQL = "SELECT * FROM CLIENTE"
+                    . "WHERE USUARIO_id_usuario = ?;";
+            if ($stmt=$db->prepare($SQL)){
+                $stmt->bind_param('i', $id);
+                $stmt->execute();
+                $stmt->bind_result($id,$idUsuario,$nome,$dt_nasc,$tel_res,$tel_cel,
+                        $tel_com,$logradouro,$complemento,$bairro,$cidade,$estado);
+                while($stmt->fetch()){
+                    $cliente->id=$id;
+                    $cliente->idUsuario=$idUsuario;
+                    $cliente->nome=$nome;
+                    $cliente->dt_nasc=$dt_nasc;
+                    $cliente->tel_res=$tel_res;
+                    $cliente->tel_cel=$tel_cel;
+                    $cliente->tel_com=$tel_com;
+                    $cliente->logradouro=$logradouro;
+                    $cliente->complemento=$complemento;
+                    $cliente->bairro=$bairro;
+                    $cliente->cidade=$cidade;
+                    $cliente->estado=$estado;
+                }
+                $stmt->close();
+                return $cliente;
+            }
+        }
+        
 ?>
