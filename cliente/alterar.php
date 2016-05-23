@@ -39,6 +39,7 @@
                 <input type="submit" value="Alterar"/>
             </form>
         
+        <a href="../usuario/pesquisar.php">VOLTAR</a>
         <?php endif; ?>
     </body>
 </html>
