@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <?php
+            session_start();
             include "../include/conexao.php";
             include '../include/pedido.php';
         ?>
@@ -19,5 +20,6 @@
             </p>
             <p><input type="submit" value="Enviar"/> </p>
         </form>
+        <a href="../index.php">Voltar</a>
     </body>
 </html>
