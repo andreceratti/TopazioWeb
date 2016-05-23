@@ -12,12 +12,14 @@
         else echo "<h1>Usuario ou senha incorreta</h1>";
         if (!empty($user->tipo)) $_SESSION["usuario.tipo"] = $user->tipo;
         if (!empty($user->login)) $_SESSION["loginAtivo"] = TRUE;
+        if (!empty($user->id)) $_SESSION["usuario.id"] = $user->id;
     }
    
     function logout(){
         unset($_SESSION["loginAtivo"]);
         unset($_SESSION["usuario.login"]);
         unset($_SESSION["usuario.tipo"]);
+        unset($_SESSION["usuario.id"]);
     }
     function cadastrarCliente(){
         $SQL = "INSERT INTO CLIENTE (USUARIO_id_usuario, nm_cliente,"
