@@ -14,7 +14,7 @@
             <p><label>Forma de Pagamento: </label>
                 <select name="pagamento">
                     <option>PagueSeguro</option>
-                    <option>DinheiroMail</option>
+                    <option>Dinheiro</option>
                 </select>
             </p>
             <p><input type="submit" value="Enviar"/> </p>
