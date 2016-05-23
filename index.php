@@ -41,6 +41,7 @@
                     </P>
                     <?php elseif(($_SESSION["usuario.tipo"]=='2')): ?>
                         <p>Area de Cliente</p>
+                        <span><a href="pedido/cadastrar.php">Criar Pedido</a></span>
                     <?php elseif(($_SESSION["usuario.tipo"]=='3')): ?>
                         <p>Area da Farmacia</p>
                     <?php endif; ?>
