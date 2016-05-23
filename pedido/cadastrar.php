@@ -11,10 +11,12 @@
     <body>
         <form method="POST" enctype="multipart/form-data">
             <label>Pedido: <br/></label><input type="file" name="arquivo"/> <br/>
-            <p><label>Forma de Pagamento: </label><select>
-                <option>PagueSeguro</option>
-                <option>DinheiroMail</option>
-            </select></p>
+            <p><label>Forma de Pagamento: </label>
+                <select name="pagamento">
+                    <option>PagueSeguro</option>
+                    <option>DinheiroMail</option>
+                </select>
+            </p>
             <p><input type="submit" value="Enviar"/> </p>
         </form>
     </body>
