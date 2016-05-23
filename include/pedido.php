@@ -17,8 +17,14 @@
 
     if (isset($nomearquivo)){
         if (!empty($nomeantigo)){
-            move_uploaded_file($nomeTemporario, $pasta.$nomearquivo.'.'.$tipo[1]);
-            echo 'Arquivo enviado com sucesso';
+            if($tipo[1]=='jpg'||$tipo[1]=='jpeg'||$tipo[1]=='png'){
+                move_uploaded_file($nomeTemporario, $pasta.$nomearquivo.'.'.$tipo[1]);
+                echo 'Arquivo enviado com sucesso<br>';
+                echo $tipo[1].'<hr>';
+            } else {
+                echo 'Tipo de arquivo incompativel<br>';
+                echo $tipo[1].'<hr>';
+            }
         } else {
             echo '<h3>Por favor selecione uma imagem para enviar</h3>';
         }
