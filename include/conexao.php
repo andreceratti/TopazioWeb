@@ -284,4 +284,29 @@
                 }
             }
         }
+        
+        function selectPedidos(){
+            global $db;
+            
+            $SQL = "SELECT * FROM PEDIDO WHERE CLIENTE_USUARIO_id_usuario = ?";
+            if($stmt = $db->prepare($SQL)){
+                $stmt->bind_param('i', $id);
+                if (!empty($_SESSION['usuario.id'])) $id = $_SESSION['usuario.id'];
+                $stmt->execute();
+                $stmt->bind_result($idPedido,$idUsuario,$idCliente,$dtAbertura,
+                        $dtFechamento,$delivery,$foto,$status,$pagamento);
+                while ($stmt->fetch()){
+                    echo '<td>'. $idPedido . '</td>';
+                    echo '<td>'. $dtAbertura . '</td>';
+                    echo '<td>'. $status . '</td>';
+                }
+                if ($stmt->num_rows()==0){
+                    echo '<tr>';
+                    echo '<td>---</td>';
+                    echo '<td>---</td>';
+                    echo '<td>---</td>';
+                    echo '</tr>';
+                }
+            }
+        }
 ?>
