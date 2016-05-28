@@ -11,14 +11,13 @@
                 cadastrarCliente();
             }
         ?>
-        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
        
     </head>
     <body>
-        <div id="site">
-            <div id="menu">
-                
+              
+                <center><div class="center"> 
                 <form method="get">
                     <label>Nome</label>
                     <input type="text" name="nome" class="span3 form-control"><br/>
@@ -58,17 +57,8 @@
                     
                     <input type="submit" value="Enviar"/>
                 </form>
-            </div>
-            
+                        
             <p><a href="../index.php">Voltar</a></p>
-            
-            <div id="corpo">
-                
-            </div>
-            <div id="rodape">
-                
-            </div>
-        </div>
-        
+            </div></center>
     </body>
 </html>
