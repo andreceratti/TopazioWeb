@@ -19,41 +19,66 @@
     <body>
         <center><div class="center">
                 <form method="get">
-                    <p><label>Nome:</label>
-                    <input type="text" name="nome" class="span3 form-control"><p/>
-                    <p><label>Telefone Comercial:</label>
-                    <input type="text" name="telefone" class="span3 form-control" ></p>
-                    <p><label>Celular:</label>
-                    <input type="text" name="celular" class="span3 form-control" ></p>
-                    <p><label>Logradouro:</label>
-                    <input type="text" name="lougradouro" class="span3 form-control" ></p>
-                    <p><label>Bairro:</label>
-                    <input type="text" name="bairro" class="span3 form-control" ></p>
-                    <p> <label>Cidade:</label>
-                    <input type="text" name="cidade" class="span3 form-control" ></p>
-                    <p> <label>Estado:</label>
-                    <input type="text" name="estado" class="span3 form-control" ></p>
-
-                    <p><label>Hora de Inicio Funcionamento:</label>
-                    <input type="text" name="inicio_funcionamento" class="span3 form-control" ></p>
-                    <p><label>Hora de Fim Funcionamento:</label>
-                    <input type="text" name="final_funcionamento" class="span3 form-control" ><br>
-                    <hr>
-                    <p><label>Email:</label>
-                    <input type="text" name="email" class="span3 form-control"/></p>
-                    <p><label>Senha:</label> 
-                    <input type="password" name="senha" class="span3 form-control"/></p>
-                    <p><label>Pergunta Secreta:</label>
-                    <select name="pergunta">
+                    <table>
+                        <tr>
+                            <td><p><label>Nome:</label></td>
+                            <td><input type="text" name="nome" class="span3 form-control"><p/></td>
+                        </tr>                    
+                        <tr>
+                            <td><p><label>Telefone Comercial:</label></td>
+                            <td><input type="text" name="telefone" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Celular:</label></td>
+                            <td><input type="text" name="celular" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Logradouro:</label></td>
+                            <td><input type="text" name="lougradouro" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Bairro:</label></td>
+                            <td><input type="text" name="bairro" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p> <label>Cidade:</label></td>
+                            <td><input type="text" name="cidade" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p> <label>Estado:</label></td>
+                            <td><input type="text" name="estado" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Hora de Inicio Funcionamento:</label></td>
+                            <td><input type="text" name="inicio_funcionamento" class="span3 form-control" ></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Hora de Fim Funcionamento:</label></td>
+                            <td><input type="text" name="final_funcionamento" class="span3 form-control" ><br></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Email:</label></td>
+                            <td><input type="text" name="email" class="span3 form-control"/></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Senha:</label></td>
+                            <td><input type="password" name="senha" class="span3 form-control"/></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><label>Pergunta Secreta:</label></td>
+                            <td><select name="pergunta">
                         <option value="1">Qual o nome de solteiro da sua mãe?</option>
                         <option value="2">Qual o nome do seu primeiro animal de estimação?</option>
                         <option value="3">Qual é o time do seu coração?</option>
                         <option value="4">Qual cidade você passou a maior parte da sua vida?</option>
                         <option value="5">Qual a sua comida favorita?</option>
-                    </select></p>
-                    <p><label>Resposta:</label>
-                    <input type="text" name="resposta" class="span3 form-control"/></p>
+                    </select></p></td>
+                        <tr>
+                            <td><p><label>Resposta:</label></td>
+                            <td><input type="text" name="resposta" class="span3 form-control"/></p></td>
+                        </tr>
                     
+                    </table>
                     <input type="submit" value="Enviar"/>
                 </form>
         </center></div>
