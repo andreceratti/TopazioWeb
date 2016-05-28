@@ -14,15 +14,18 @@
                 logout();
             }
         ?>
-        
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div id="site">
-            <div id="menu">
                 <?php if(empty($_SESSION["loginAtivo"])): ?>
+        
+                <center><div class="center"> <!-- inicio da centralização -->
+                    
                     <form method="get">
-                        Login: <input type="text" name="login"/>
-                        Senha: <input type="text" name="senha"/>
+                        
+                        <p> Login: <input type="text" name="login"/> </p>
+                        <p> Senha: <input type="text" name="senha"/> </p>
                         <input type="submit" value="Logar"/>
                         <p><a href="cliente/cadastrar.php">Novo Cadastro</a></p>
                     </form>
@@ -46,18 +49,13 @@
                         <p>Area da Farmacia</p>
                     <?php endif; ?>
                 </form>
+                    
+                </div></center> <!-- fim da centralização -->
+        
                 <?php endif; ?>
 
                 
 
-            </div>
-            <div id="corpo">
-                
-            </div>
-            <div id="rodape">
-                
-            </div>
-        </div>
         
     </body>
 </html>

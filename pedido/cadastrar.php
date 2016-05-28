@@ -8,6 +8,10 @@
             include '../include/pedido.php';
         ?>
         <title>Cadastro de Pedido</title>
+        
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <form method="POST" enctype="multipart/form-data">

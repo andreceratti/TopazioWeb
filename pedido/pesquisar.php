@@ -7,6 +7,8 @@
             include "../include/conexao.php";
             include '../include/pedido.php';
         ?>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <title>Pesquisa de Pedidos</title>
     </head>
     <body>

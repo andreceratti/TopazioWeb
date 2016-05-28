@@ -6,6 +6,8 @@
             include "../include/conexao.php";
             include "../include/usuario.php";
         ?>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>

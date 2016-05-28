@@ -1,0 +1,40 @@
+body{
+    font-family: Helvetica, sans-serif;
+    
+}
+#wrap{
+    width: 960px;
+    margin: auto;
+    background: #e3e3e3;
+    padding: 10px 20px;
+}
+
+p {
+   font-size: 20px;
+   color: #000000;
+   text-decoration: none;
+}
+
+header nav p{
+    padding-left: 0; 
+}
+
+header nav p span{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header nav p span a{
+   font-size: 8px;
+   color: #ff6600;
+   text-decoration: none;
+}
+
+header nav p span a:hover{
+text-decoration: underline;
+}
+
+#content{
+    float: left;
+    background: red;
+}
