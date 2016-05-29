@@ -307,6 +307,21 @@
                     echo '<td>---</td>';
                     echo '</tr>';
                 }
+                $stmt->close();
+            }
+        }
+        
+        function popularSelectFarmacia(){
+            global $db;
+            $SQL = "SELECT id_farmacia, nm_farmacia"
+                    . " FROM FARMACIA ";
+            if($stmt=$db->prepare($SQL)){
+                $stmt->execute();
+                $stmt->bind_result($idFarmacia, $nome);
+                while ($stmt->fetch()){
+                    echo '<option value='. $idFarmacia .'>'. $nome . '</option>';
+                }
+                $stmt->close();
             }
         }
 ?>
