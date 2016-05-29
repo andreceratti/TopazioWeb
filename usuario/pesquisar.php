@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta charset="utf-8">
         <?php
             include "../include/cliente.php";
             include "../include/conexao.php";
             include "../include/usuario.php";
         ?>
-        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
         <?php
         if (empty($_SESSION["usuario.tipo"])||$_SESSION["usuario.tipo"]!=1):
-            echo '<h1>Area restrita</h1>';
-        else: ?>
+            echo "<h1>Area restrita</h1>";
+        ?>
+        
+        <center><div class="center"> 
         <form>
             <p>
                 Email:<input type="text" name="email"/>
@@ -30,6 +33,7 @@
                 <input type="submit" value="Enviar"/>
             </p>
         </form>
+        </center></div> 
         
             <?php
                 if (!empty($_GET["pesquisa"])){
