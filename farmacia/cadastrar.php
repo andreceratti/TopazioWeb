@@ -22,7 +22,7 @@
                     <table>
                         <tr>
                             <td><p><label>Nome:</label></td>
-                            <td><input type="text" name="nome" class="span3 form-control"><p/></td>
+                            <td><input type="text" name="nome" class="span3 form-control"></p></td>
                         </tr>                    
                         <tr>
                             <td><p><label>Telefone Comercial:</label></td>
@@ -54,7 +54,7 @@
                         </tr>
                         <tr>
                             <td><p><label>Hora de Fim Funcionamento:</label></td>
-                            <td><input type="text" name="final_funcionamento" class="span3 form-control" ><br></td>
+                            <td><input type="text" name="final_funcionamento" class="span3 form-control" ></p></td>
                         </tr>
                         <tr>
                             <td><p><label>Email:</label></td>
@@ -76,8 +76,7 @@
                         <tr>
                             <td><p><label>Resposta:</label></td>
                             <td><input type="text" name="resposta" class="span3 form-control"/></p></td>
-                        </tr>
-                    
+                        </tr>                    
                     </table>
                     <input type="submit" value="Enviar"/>
                 </form>
