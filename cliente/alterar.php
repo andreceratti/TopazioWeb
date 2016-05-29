@@ -31,30 +31,31 @@
                 
             <center><div class="center"> 
                     
-                <table>
+                
+                    <p><label>Email:</label></p>
+                    <p><input type="text" name="email" value='<?php echo $info->email ?>'></p>
+                    
+                    <table>
                     <tr>
-                        <td><p><label>Email:</label></td>
-                        <td><input type="text" name="email" value='<?php echo $info->email ?>'</p></td>
-                    </tr>
-                    <tr>
-                    <select name="ativo">
+                        <td><select name="ativo">
                         <option value="1" <?php if ($info->conta==1) echo 'selected="selected"' ?>>Ativada</option>
                         <option value="0" <?php if ($info->conta==0) echo 'selected="selected"' ?>>Desativada</option>
-                    </select>
+                            </select></td>
                     </tr>
                     <tr>
-                    <select name="tipo">
+                        <td><select name="tipo">
                         <option value="2" <?php if ($info->tipo==2) echo 'selected="selected"' ?>>Cliente</option>
                         <option value="3" <?php if ($info->tipo==3) echo 'selected="selected"' ?>>Farmacia</option>
                         <option value="1" <?php if ($info->tipo==1) echo 'selected="selected"' ?>>Administrador</option>
-                    </select>
+                            </select></td>
                     </tr>
-                    <tr>
-                        <td><p><label>Nova Senha:</label></td>
-                        <td><input type="password" name="senha"/>
-                            <input type="hidden" value="<?php echo $info->id ?>" name="id"/></p></td>
-                    </tr>
-                </table>
+                    </table>
+                    
+                    <p><label>Nova Senha:</label></p>
+                    <p><input type="password" name="senha"/>
+                        <input type="hidden" value="<?php echo $info->id ?>" name="id"/></p>
+                    
+                
                 <input type="submit" value="Alterar"/>
             </form>
         </center></div> 
