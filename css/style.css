@@ -21,6 +21,15 @@ input[type=date] {
     border-radius: 4px;
 }
 
+input[type=file] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #FFDB51;
+    border-radius: 4px;
+}
+
 input[type=password] {
     width: 80%;
     padding: 12px 20px;
