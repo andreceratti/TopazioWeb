@@ -21,7 +21,6 @@
     </head>
     <body>
                 <?php if(empty($_SESSION["loginAtivo"])): ?>
-                    <form method="post">
                     <center><div class="center"> <!-- inicio da centralização -->
                     
                     <form method="post">
@@ -32,7 +31,6 @@
                         <p><a href="cliente/cadastrar.php">Novo Cadastro</a></p>
                     </form>
                 <?php else: ?>
-                <form method="post">     
                 <form method="post">
                     <b><?=$_SESSION["usuario.login"];?></b>
                     
