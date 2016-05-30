@@ -14,6 +14,11 @@
             echo $db->connect_error;
             die('<br>Desculpe, mas estamos com alguns problemas');
         }
+        $db2 = new mysqli($servidor,$usuario_banco,$senha_banco,$banco);
+        if($db2->connect_error){
+            echo $db->connect_error;
+            die('<br>Desculpe, mas estamos com alguns problemas');
+        }
         
         function selectUsuario($SQL,$login){
             global $db;
@@ -23,8 +28,8 @@
                 if ($stmt = $db->prepare($SQL)) {
                     $stmt->bind_param("ss", $login, $senha);
 
-                    $login = $_GET['login'];
-                    $senha = $_GET['senha'];
+                    $login = $_POST['login'];
+                    $senha = $_POST['senha'];
                     $stmt->execute();
 
                     $stmt->bind_result($id, $login, $senha, $ativo, $pergunta, 
@@ -320,6 +325,37 @@
                 $stmt->bind_result($idFarmacia, $nome);
                 while ($stmt->fetch()){
                     echo '<option value='. $idFarmacia .'>'. $nome . '</option>';
+                }
+                $stmt->close();
+            }
+        }
+        function selectNomeFarmacia($SQL){
+            global $db2;
+            if($stmt = $db2->prepare($SQL)){
+                $stmt->execute();
+                $stmt->bind_result($nome);
+                while ($stmt->fetch()){
+                    $nomeFarmacia = $nome;
+                }
+                return $nomeFarmacia;
+            }
+            $stmt->close();
+            $db2->close();
+        }
+        
+        function  popularAvalicao($SQL){
+            global $db;
+            if($stmt=$db->prepare($SQL)){
+                $stmt->execute();
+                $stmt->bind_result($idFarmacia, $nota, $observacao);
+                $rank = 0;
+                while ($stmt->fetch()){
+                    $rank++;
+                    echo '<tr>';
+                    echo '<td>' . selectNomeFarmacia("SELECT nm_farmacia FROM FARMACIA WHERE id_farmacia = $idFarmacia ;") . '</td>';
+                    echo '<td>' . $nota . '</td>';
+                    echo '<td>' . $rank . '</td>';
+                    echo '</tr>';
                 }
                 $stmt->close();
             }
