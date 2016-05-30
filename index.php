@@ -6,11 +6,11 @@
             include "include/conexao.php";
             include "include/usuario.php";
             
-            if (!empty($_GET['login'])||!empty($_GET['senha'])){
+            if (!empty($_POST['login'])||!empty($_POST['senha'])){
                 login();
             }
 
-            if (!empty($_GET['logout'])){
+            if (!empty($_POST['logout'])){
                 logout();
             }
         ?>
@@ -20,14 +20,14 @@
         <div id="site">
             <div id="menu">
                 <?php if(empty($_SESSION["loginAtivo"])): ?>
-                    <form method="get">
+                    <form method="post">
                         Login: <input type="text" name="login"/>
-                        Senha: <input type="text" name="senha"/>
+                        Senha: <input type="password" name="senha"/>
                         <input type="submit" value="Logar"/>
                         <p><a href="cliente/cadastrar.php">Novo Cadastro</a></p>
                     </form>
                 <?php else: ?>
-                <form method="get">
+                <form method="post">
                     <b><?=$_SESSION["usuario.login"];?></b>
                     <input type="hidden" name="logout" value="sair"/>
                     <input type="submit" value="Deslogar"/>
