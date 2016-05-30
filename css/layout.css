@@ -10,12 +10,12 @@
     background-color:#eeeeee;
     height: 60%;
     width: 20%;
-    float:right;
+    float:left;
     padding:5px;
 }
 .corpo {
     width: 70%;
-    float:right;
+    float:left;
     padding:20px;
 }
 .rodape {
