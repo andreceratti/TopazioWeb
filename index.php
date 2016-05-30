@@ -61,12 +61,12 @@
                     
                     <?php elseif(($_SESSION["usuario.tipo"]=='2')): ?>
                     
-                        <p>Area de Cliente</p>
+                        <!--<p>Area de Cliente</p>-->
                         <span><a href="pedido/cadastrar.php"><p>Criar Pedido</p></a></span>
                         
                     <?php elseif(($_SESSION["usuario.tipo"]=='3')): ?>
                         
-                        <p>Area da Farmacia</p>
+                        <!--<p>Area da Farmacia</p>-->
                         
                     <?php endif; ?>
                     </div> <!-- fim de menu -->                    
