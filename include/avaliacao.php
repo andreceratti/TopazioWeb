@@ -1,8 +1,10 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    function popularAvaliacao(){
+        $SQL = "SELECT FARMACIA_id_farmacia,"
+                . " AVG(vl_avaliacao), ds_nota FROM AVALIACAO"
+                . " GROUP BY FARMACIA_id_farmacia, ds_nota"
+                . " ORDER BY 2 DESC ;";
+        popularAvalicao($SQL);
+    }
 ?>
