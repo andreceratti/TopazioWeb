@@ -6,9 +6,11 @@
             include '../include/avaliacao.php';
         ?>
         <title>Avaliar Farmacia</title>
+        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>   
     </head>
     <body>
-        <form>
+        <center><div class="center"><form>
             <select>
                 <?php popularSelectFarmacia() ?>
             </select>
@@ -26,7 +28,7 @@
                 Observação:
                 <textarea rows="4" cols="50"></textarea>
             </p>
-        </form>
+        </form></div></center>
         
         <?php
             $db->close();
