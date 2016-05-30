@@ -16,23 +16,33 @@
         
         <center><div class="center">
         <form>
-            <select>
-                <?php popularSelectFarmacia() ?>
-            </select>
-            <p>
-                <label>Nota:</label>
-                <select>
+            <table>
+                <tr>
+            
+                    <td><p><label>Farmacia:</label></p></td>
+                    <td><select>
+                        <?php popularSelectFarmacia() ?>
+                        </select></td>            
+                </tr>
+                
+                <tr>            
+                    <td><p><label>Nota:</label></p></td>
+                    <td><select>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                </select>
-            </p>
-            <p>
-                Observação:
-                <textarea rows="4" cols="50"></textarea>
-            </p>
+                        </select></td>
+                </tr>
+                
+                <tr>            
+                    <td><p><label>Observação:</label></p></td>
+                    <td><textarea rows="4" cols="50"></textarea></td>
+                </tr>
+            </table>
+            
+            <input type="submit" value="Enviar"/>
         </form>
         
         </div></center>
