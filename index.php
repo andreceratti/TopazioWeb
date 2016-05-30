@@ -15,20 +15,27 @@
             }
         ?>
         
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div id="site">
-            <div id="menu">
                 <?php if(empty($_SESSION["loginAtivo"])): ?>
+                <center><div class="center"> <!-- inicio da centralização -->
+                    
                     <form method="post">
-                        Login: <input type="text" name="login"/>
-                        Senha: <input type="password" name="senha"/>
+                        
+                        <p> Login: <input type="text" name="login"/> </p>
+                        <p> Senha: <input type="text" name="senha"/> </p>
+
                         <input type="submit" value="Logar"/>
                         <p><a href="cliente/cadastrar.php">Novo Cadastro</a></p>
                     </form>
+                        
                 <?php else: ?>
+<<<<<<< HEAD
                 <form method="post">
                     <b><?=$_SESSION["usuario.login"];?></b>
+                    
                     <input type="hidden" name="logout" value="sair"/>
                     <input type="submit" value="Deslogar"/>
                     
@@ -40,24 +47,21 @@
                         <span><a href="pedido/cadastrar.php">Criar Pedido</a></span>
                     </P>
                     <?php elseif(($_SESSION["usuario.tipo"]=='2')): ?>
+                    
                         <p>Area de Cliente</p>
                         <span><a href="pedido/cadastrar.php">Criar Pedido</a></span>
+                        
                     <?php elseif(($_SESSION["usuario.tipo"]=='3')): ?>
+                        
                         <p>Area da Farmacia</p>
+                        
                     <?php endif; ?>
+                        
                 </form>
-                <?php endif; ?>
-
-                
-
-            </div>
-            <div id="corpo">
-                
-            </div>
-            <div id="rodape">
-                
-            </div>
-        </div>
+                    
+                </div></center> <!-- fim da centralização -->
         
+                <?php endif; ?>
+                  
     </body>
 </html>
