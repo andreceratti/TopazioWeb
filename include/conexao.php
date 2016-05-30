@@ -315,6 +315,33 @@
                 $stmt->close();
             }
         }
+        function selectPedidosOrcamento(){
+            global $db;
+            
+            $SQL = "SELECT * FROM PEDIDO";
+            if($stmt = $db->prepare($SQL)){
+                $stmt->execute();
+                $stmt->bind_result($idPedido,$idUsuario,$idCliente,$dtAbertura,
+                        $dtFechamento,$delivery,$foto,$status,$pagamento);
+                while ($stmt->fetch()){
+                    echo '<td>'. $idPedido . '</td>';
+                    echo '<td>'. $dtAbertura . '</td>';
+                    echo '<td>'. $status . '</td>';
+                    echo '<td> <form method="get" action="cadastrar.php">'
+                        . '<input type="hidden" name="id" value="'.$idPedido.'"/>'
+                        . '<input type=submit value="Ver"/></form></td>';
+                }
+                if ($stmt->num_rows()==0){
+                    echo '<tr>';
+                    echo '<td>---</td>';
+                    echo '<td>---</td>';
+                    echo '<td>---</td>';
+                    echo '<td>---</td>';
+                    echo '</tr>';
+                }
+                $stmt->close();
+            }
+        }
         
         function popularSelectFarmacia(){
             global $db;

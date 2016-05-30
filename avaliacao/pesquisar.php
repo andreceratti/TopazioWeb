@@ -7,9 +7,11 @@
             include '../include/farmacia.php';
         ?>
         <title>Ranking das farmacias</title>
+        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>    
     </head>
     <body>
-        <form>
+        <center><div class="center"><form>
             <p>
                 <label>Nome da Farmacia </label><input type="text" name="nomeFarmacia"/>
                 <input type="submit" value="Pesquisar"/>
@@ -23,6 +25,6 @@
                 <th>Ranking</th>
             </tr>
             <?php popularAvaliacao() ?>
-        </table>
+        </table></div></center>
     </body>
 </html>
