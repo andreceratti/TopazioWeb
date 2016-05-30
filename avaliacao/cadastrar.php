@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <?php
             include '../include/conexao.php';
             include '../include/avaliacao.php';
         ?>
         <title>Avaliar Farmacia</title>
+        
+        <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
+        
+        <center><div class="center">
         <form>
             <select>
                 <?php popularSelectFarmacia() ?>
@@ -28,6 +35,8 @@
             </p>
         </form>
         
+        </div></center>
+    
         <?php
             $db->close();
         ?>

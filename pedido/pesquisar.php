@@ -14,12 +14,15 @@
     </head>
     <body>
         <center><div class="center">
+                
         <form>
             <?php
                 mostrarPedidos();
             ?>
         </form>
+                
         </div></center>
+    
         <?php 
             global $db;
             $db->close();
