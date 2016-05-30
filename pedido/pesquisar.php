@@ -19,7 +19,7 @@
                 mostrarPedidos();
             ?>
         </form>
-        </center></div>
+        </div></center>
         <?php 
             global $db;
             $db->close();
