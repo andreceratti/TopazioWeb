@@ -4,7 +4,7 @@ body {
 }
 
 input[type=text] {
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -13,7 +13,7 @@ input[type=text] {
 }
 
 input[type=date] {
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ input[type=date] {
 }
 
 input[type=file] {
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -31,7 +31,7 @@ input[type=file] {
 }
 
 input[type=password] {
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -40,7 +40,7 @@ input[type=password] {
 }
 
 select {
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -49,7 +49,7 @@ select {
 }
 
 textarea {
-    width: 80%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -79,7 +79,7 @@ input[type=submit]:after {
     display: block;
     position: absolute;
     padding-top: 300%;
-    padding-left: 380%;
+    padding-left: 370%;
     margin-left: -20px!important;
     margin-top: -120%;
     opacity: 0;
