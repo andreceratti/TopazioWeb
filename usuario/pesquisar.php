@@ -15,8 +15,8 @@
         <?php
         if (empty($_SESSION["usuario.tipo"])||$_SESSION["usuario.tipo"]!=1):
             echo "<h1>Area restrita</h1>";
-        ?>
-        
+        else:?>
+
         <center><div class="center"> 
         <form>
             <p>
@@ -33,8 +33,6 @@
                 <input type="submit" value="Enviar"/>
             </p>
         </form>
-        </center></div> 
-        
             <?php
                 if (!empty($_GET["pesquisa"])){
                     pesquisaUsuario();
@@ -43,6 +41,8 @@
                     deletarUsuario();
                 }
             ?>
+        </center></div> 
+        
         <?php endif; ?>
         
         <p><a href="../index.php">Voltar</a></p>
