@@ -80,7 +80,7 @@
                     </table>
                     <input type="submit" value="Enviar"/>
                 </form>
-        </center></div>
+        </div></center>
             
             <p><a href="../index.php">Voltar</a></p>
             
