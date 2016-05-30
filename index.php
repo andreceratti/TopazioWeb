@@ -20,8 +20,8 @@
         
     </head>
     <body>
+                <center><div class="center"> <!-- inicio da centralização -->
                 <?php if(empty($_SESSION["loginAtivo"])): ?>
-                    <center><div class="center"> <!-- inicio da centralização -->
                     
                     <form method="post">
                         
@@ -48,10 +48,12 @@
                     
                         <p>Area de Cliente</p>
                         <span><a href="pedido/cadastrar.php">Criar Pedido</a></span>
+                        <span><a href="pedido/pesquisar.php">Visualizar Pedidos</a></span>
                         
                     <?php elseif(($_SESSION["usuario.tipo"]=='3')): ?>
                         
                         <p>Area da Farmacia</p>
+                        <span><a href="orcamento/visualizar.php">Realizar Orçamento</a></span>
                         
                     <?php endif; ?>
                         
