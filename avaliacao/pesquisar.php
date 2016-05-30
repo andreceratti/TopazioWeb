@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <?php
             include '../include/conexao.php';
             include '../include/avaliacao.php';
