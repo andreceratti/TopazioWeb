@@ -17,22 +17,22 @@
         
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
                 <?php if(empty($_SESSION["loginAtivo"])): ?>
-                <center><div class="center"> <!-- inicio da centralização -->
+                    <form method="post">
+                    <center><div class="center"> <!-- inicio da centralização -->
                     
                     <form method="post">
                         
                         <p> Login: <input type="text" name="login"/> </p>
-                        <p> Senha: <input type="text" name="senha"/> </p>
-
+                        <p> Senha: <input type="password" name="senha"/> </p>
                         <input type="submit" value="Logar"/>
                         <p><a href="cliente/cadastrar.php">Novo Cadastro</a></p>
                     </form>
-                        
                 <?php else: ?>
-<<<<<<< HEAD
+                <form method="post">     
                 <form method="post">
                     <b><?=$_SESSION["usuario.login"];?></b>
                     
