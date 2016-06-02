@@ -6,7 +6,7 @@
             include '../include/avaliacao.php';
             include '../include/farmacia.php';
         ?>
-        <title>Ranking das farmacias</title>
+        <title>Ranking das Farmacias</title>
     </head>
     <body>
         <form>
