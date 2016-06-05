@@ -14,9 +14,26 @@
         ?>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/estrutura.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
+        
+        <div class="linha">
+                <div class="coluna col12">
+                    <div class="cabeca"> <!-- inicio cabeçalho -->
+                        <h1>Topazio Farma</h1>
+                    </div> <!-- fim cabeçalho -->
+                </div>
+            </div>
+        
+              <div class="linha">
+                <div class="coluna col5">                                
+                    <div class="corpo"> <!-- inicio corpo-->                
+                
+            <center><div class="center"> 
+        
         <?php
             if(!empty($_GET["alterar"])):?>
             <?php
@@ -27,10 +44,8 @@
                         . " WHERE id_usuario = ".$id.";";
             $info = pesquisaAlterar($SQL);
             ?>
-            <form method="get">
-                
-            <center><div class="center"> 
-                    
+            <form method="get">              
+                        
                 
                     <p><label>Email:</label></p>
                     <p><input type="text" name="email" value='<?php echo $info->email ?>'></p>
@@ -62,5 +77,18 @@
                 
         <a href="../usuario/pesquisar.php">VOLTAR</a>
         <?php endif; ?>
+        
+        </div> <!-- fim corpo -->                
+                </div> <!--FIM col5-->                
+            </div><!--Fim linha-->
+            
+            <div class="linha">
+                <div class="coluna col12">   
+                    <div class="rodape"> <!-- inicio de rodape -->
+                        Topazio Farma - Solução de orçamentos para sua farmácia
+                    </div> <!-- fim de rodape -->                                    
+                </div> <!--FIM col12-->                
+            </div><!--Fim linha-->
+            
     </body>
 </html>
