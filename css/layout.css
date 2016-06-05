@@ -1,12 +1,46 @@
 .cabeca {
-
+    width: 100%;
+    background-color: #ffcb04;
+    color:white;
+    text-align:center;
+    padding:5px 0;
 }
 .menu {
-
+    line-height:30px;
+    background-color:#eeeeee;
+    height: 100%;
+    width: 100%;
+    float:left;
+    text-align: center;
+    padding:5px 0px 3px 0px;
 }
 .corpo {
-
+    width: 50%;
+    height: 74%;
+    float:right;
+    /*padding:20px;*/
 }
 .rodape {
+    width: 100%;
+    background-color: #ffcb04;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:3px;
+}
 
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
 }
