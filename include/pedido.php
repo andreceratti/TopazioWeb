@@ -37,6 +37,7 @@
                             . " ic_delivery_sim_nao, im_foto_receita,"
                             . " ds_status_pedidos, ic_forma_pagamento_dinheiro_cartao)"
                             . " VALUES (?,?,NOW(),'0',?,'Esperando Orçamento',?);";
+                    $nomeCompleto = $nomearquivo.$tipo[1];
                     insertPedido($SQL, $nomearquivo);
                 } else {
                     echo 'Aviso: Tipo de arquivo incompativel<br>';
