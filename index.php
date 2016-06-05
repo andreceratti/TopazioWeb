@@ -18,7 +18,7 @@
         
         <link href="css/estrutura.css" rel="stylesheet" type="text/css"/>        
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style2.css" rel="stylesheet" type="text/css"/>
         <link href="css/layout.css" rel="stylesheet" type="text/css"/>
         
     </head>
@@ -36,7 +36,7 @@
             
             <div class="linha">
                 <div class="coluna col12">
-                    <img src="img/icone.jpg" height="300px" width="300px">
+                    <img src="img/topazio.png" height="300px" width="300px">
                                 
                     <div class="corpo"> <!-- inicio corpo-->
                             

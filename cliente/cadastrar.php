@@ -14,10 +14,24 @@
         ?>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
-       
+        <link href="../css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/estrutura.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
-              
+        
+            <div class="linha">
+                <div class="coluna col12">
+                    <div class="cabeca"> <!-- inicio cabeçalho -->
+                        <h1>Topazio Farma</h1>
+                    </div> <!-- fim cabeçalho -->
+                </div>
+            </div>
+        
+              <div class="linha">
+                <div class="coluna col5">
+                                
+                    <div class="corpo"> <!-- inicio corpo-->
                 <center><div class="center"> 
                         
                         <form method="get">
@@ -87,8 +101,20 @@
                         </table>    
                     <input type="submit" value="Enviar"/>
                 </form>
-            </div></center>            
-            <p><a href="../index.php">Voltar</a></p>
+            </div></center>
+                        
+                        <p><a href="../index.php">Voltar</a></p>
+                    </div> <!-- fim corpo -->                
+                </div> <!--FIM col5-->                
+            </div><!--Fim linha-->
+            
+            <div class="linha">
+                <div class="coluna col12">   
+                    <div class="rodape"> <!-- inicio de rodape -->
+                        Topazio Farma - Solução de orçamentos para sua farmácia
+                    </div> <!-- fim de rodape -->                                    
+                </div> <!--FIM col12-->                
+            </div><!--Fim linha-->
             
     </body>
 </html>
