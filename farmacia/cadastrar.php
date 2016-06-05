@@ -97,7 +97,6 @@
                         </div></center>
                         
                 <p><a href="../index.php">Voltar</a></p>
-
                         
                     </div> <!-- fim corpo -->                
             </div> <!--FIM col6-->                
@@ -109,8 +108,7 @@
                         Topazio Farma - Solução de orçamentos para sua farmácia
                     </div> <!-- fim de rodape -->                                    
                 </div> <!--FIM col12-->                
-            </div><!--Fim linha-->
-                        
+            </div><!--Fim linha-->                     
             
         
     </body>

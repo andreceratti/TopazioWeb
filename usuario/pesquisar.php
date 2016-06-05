@@ -9,9 +9,23 @@
         ?>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/estrutura.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
+        
+        <div class="linha">
+                <div class="coluna col12">
+                    <div class="cabeca"> <!-- inicio cabeçalho -->
+                        <h1>Topazio Farma</h1>
+                    </div> <!-- fim cabeçalho -->
+                </div>
+            </div>
+        
+              <div class="linha">
+                <div class="coluna col8">                                
+                    <div class="corpo"> <!-- inicio corpo-->        
         <?php
         if (empty($_SESSION["usuario.tipo"])||$_SESSION["usuario.tipo"]!=1):
             echo "<h1>Area restrita</h1>";
@@ -22,13 +36,14 @@
             <p>
                 Email:<input type="text" name="email"/>
             </p>
-            <p>
-                Ativo:
-                <input type="radio" name="ativo" value="ativo"/> Só Ativo 
-                <input type="radio" name="ativo" value="naoativo"/> Só não ativo 
-                <input type="radio" checked name="ativo" value="ambos"/> Ambos 
-            </p>
+            
+            <p>Ativo:</p>
+                <p><input type="radio" name="ativo" value="ativo"/> Só Ativo </p>
+                <p><input type="radio" name="ativo" value="naoativo"/> Só não ativo </p>
+                <p><input type="radio" checked name="ativo" value="ambos"/> Ambos </p>
+            
             <input type="hidden" value="1" name="pesquisa"/>
+            
             <p>
                 <input type="submit" value="Enviar"/>
             </p>
@@ -42,9 +57,22 @@
                 }
             ?>
         </center></div> 
+            
+        <p><a href="../index.php">Voltar</a></p>
         
         <?php endif; ?>
         
-        <p><a href="../index.php">Voltar</a></p>
+                </div> <!-- fim corpo -->                
+            </div> <!--FIM col8-->                
+        </div><!--Fim linha-->
+            
+            <div class="linha">
+                <div class="coluna col12">   
+                    <div class="rodape"> <!-- inicio de rodape -->
+                        Topazio Farma - Solução de orçamentos para sua farmácia
+                    </div> <!-- fim de rodape -->                                    
+                </div> <!--FIM col12-->                
+            </div><!--Fim linha-->    
+
     </body>
 </html>
