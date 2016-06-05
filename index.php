@@ -36,7 +36,7 @@
             
             <div class="linha">
                 <div class="coluna col12">
-                    <img src="img/icone.jpg" height="300px" width="300px">
+                    <img src="img/topazio.png" height="300px" width="300px">
                                 
                     <div class="corpo"> <!-- inicio corpo-->
                             
