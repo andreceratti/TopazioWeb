@@ -18,10 +18,11 @@
     $pasta = 'uploads/';
     
     function mostrarPedidos(){
-        echo '<table border="1"><tr>';
-        echo '<th>Pedido</th>';
+        echo '<table><tr>';
+        echo '<th>Codigo Pedido</th>';
         echo '<th>Data de abertura</th>';
         echo '<th>Status</th>';
+        echo '<th>Visualizar</th>';
         echo '</tr>';
         selectPedidos();
         echo '</table>';

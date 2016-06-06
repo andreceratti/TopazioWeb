@@ -32,7 +32,10 @@
         insertOrcamento($SQL, $precoFormula, $precoEntrega, $dataEntrega,
                 $delivery, $usuarioFarmacia, $pedidoID, $farmaciaID);
     }
-   
-
-   
+    
+    function mostrarOrcamentos(){
+        global $pedido;
+        $SQL = "SELECT * FROM ORCAMENTO WHERE PEDIDO_id_pedido = ?;";
+        popularTabelaOrcamento($SQL, $pedido->id);
+    }
 ?>

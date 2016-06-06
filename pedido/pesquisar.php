@@ -15,12 +15,9 @@
     <body>
         <center><div class="center">
                 
-        <form>
             <?php
                 mostrarPedidos();
             ?>
-        </form>
-                
         </div></center>
     
         <?php 

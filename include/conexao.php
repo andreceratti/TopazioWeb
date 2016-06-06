@@ -316,24 +316,34 @@
             }
         }
         function selectPedidos(){
-            global $db;
+            global $db2;
+            $orcamento = new stdClass();
+            
             
             $SQL = "SELECT * FROM PEDIDO WHERE CLIENTE_USUARIO_id_usuario = ?";
-            if($stmt = $db->prepare($SQL)){
+            if($stmt = $db2->prepare($SQL)){
                 $stmt->bind_param('i', $id);
                 if (!empty($_SESSION['usuario.id'])) $id = $_SESSION['usuario.id'];
                 $stmt->execute();
                 $stmt->bind_result($idPedido,$idUsuario,$idCliente,$dtAbertura,
                         $dtFechamento,$delivery,$foto,$status,$pagamento);
                 while ($stmt->fetch()){
+                    $orcamento = selectOrcamentoByPedido($idPedido);
                     echo '<tr>';
                     echo '<td>'. $idPedido . '</td>';
                     echo '<td>'. $dtAbertura . '</td>';
                     echo '<td>'. $status . '</td>';
+                    echo '<td>'
+                            . '<form method="get" action="../orcamento/orcamentoPedido.php">'
+                            . '<input type="hidden" name="id" value="'. $idPedido . '">'
+                            . '<input type="submit" value="Ver">'
+                            . '</form>'
+                            . '</td>';
                     echo '</tr>';
                 }
                 if ($stmt->num_rows()==0){
                     echo '<tr>';
+                    echo '<td>---</td>';
                     echo '<td>---</td>';
                     echo '<td>---</td>';
                     echo '<td>---</td>';
@@ -482,6 +492,46 @@
                     $orcamento->delivery = $delivery;
                 }
                 return $orcamento;
+            }
+        }
+        function popularTabelaOrcamento($SQL,$id){
+            global $db2;
+            $orcamento = new stdClass();
+            
+            if($stmt=$db2->prepare($SQL)){
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                $stmt->bind_result($orcamentoID, $usuarioFarmacia, $pedidoID,
+                        $farmaciaID,$valorFormula,$valorEntrega,$dataPrevista,$delivery);
+                while($stmt->fetch()):
+                    $farmacia = selectFarmaciaByID($usuarioFarmacia);
+                    ?>
+                    <table>
+                        <tr>
+                            <td><p>Farmacia:</p></td>
+                            <td><?=$farmacia->nome?></td>
+                        </tr>
+                        <tr>
+                            <td><p>Preço Formula:</p></td>
+                            <td><?=$valorFormula?></td>
+                        </tr>
+                        <tr>
+                            <td><p>Preço Entrega:</p></td>
+                            <td><?=$valorEntrega?></td>
+                        </tr>
+                        <tr>
+                            <td><p>Data Prevista:</p></td>
+                            <td><?=$dataPrevista?></td>
+                        </tr>
+                        <tr>
+                            <td><p>Delivery:</p></td>
+                            <td><?php if ($delivery==1) echo "Sim";
+                                else echo "Não";?>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                <?php endwhile;
             }
         }
 ?>

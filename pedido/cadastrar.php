@@ -19,8 +19,8 @@
             <p><label>Pedido:</label><input type="file" name="arquivo"/></p>
             <p><label>Forma de Pagamento: </label>
                 <select name="pagamento">
-                    <option>PagueSeguro</option>
-                    <option>Dinheiro</option>
+                    <option value="1">Cartão de Credito</option>
+                    <option value="2">Dinheiro</option>
                 </select>
             </p>
             <p><input type="submit" value="Enviar"/> </p>
