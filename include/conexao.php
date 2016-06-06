@@ -289,7 +289,32 @@
                 }
             }
         }
-        
+        function selectPedido($id){
+            global $db;
+            $SQL = "SELECT * FROM PEDIDO WHERE id_pedido = ?;";
+            $pedido = new stdClass();
+//            echo $SQL;
+            if($stmt=$db->prepare($SQL)){
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                $stmt->bind_result($idPedido, $idUsuario, $idCliente, $dataAbertura,
+                        $dataFechamento, $delivery, $foto, $status, $pagamento);
+                
+                while ($stmt->fetch()){
+                    $pedido->id=$idPedido;
+                    $pedido->idUsuario=$idUsuario;
+                    $pedido->idCliente=$idCliente;
+                    $pedido->dataAbertura=$dataAbertura;
+                    $pedido->dataFechamento=$dataFechamento;
+                    $pedido->delivery=$delivery;
+                    $pedido->foto=$foto;
+                    $pedido->status=$status;
+                    $pedido->pagamento=$pagamento;
+                }
+                $stmt->close();
+                return $pedido;
+            }
+        }
         function selectPedidos(){
             global $db;
             
@@ -301,9 +326,11 @@
                 $stmt->bind_result($idPedido,$idUsuario,$idCliente,$dtAbertura,
                         $dtFechamento,$delivery,$foto,$status,$pagamento);
                 while ($stmt->fetch()){
+                    echo '<tr>';
                     echo '<td>'. $idPedido . '</td>';
                     echo '<td>'. $dtAbertura . '</td>';
                     echo '<td>'. $status . '</td>';
+                    echo '</tr>';
                 }
                 if ($stmt->num_rows()==0){
                     echo '<tr>';
@@ -324,12 +351,14 @@
                 $stmt->bind_result($idPedido,$idUsuario,$idCliente,$dtAbertura,
                         $dtFechamento,$delivery,$foto,$status,$pagamento);
                 while ($stmt->fetch()){
+                    echo '<tr>';
                     echo '<td>'. $idPedido . '</td>';
                     echo '<td>'. $dtAbertura . '</td>';
                     echo '<td>'. $status . '</td>';
                     echo '<td> <form method="get" action="cadastrar.php">'
                         . '<input type="hidden" name="id" value="'.$idPedido.'"/>'
                         . '<input type=submit value="Ver"/></form></td>';
+                    echo '</tr>';
                 }
                 if ($stmt->num_rows()==0){
                     echo '<tr>';
@@ -342,7 +371,52 @@
                 $stmt->close();
             }
         }
-        
+        function selectFarmaciaByID($id){
+            global $db;
+            $farmacia = new stdClass();
+            
+            $SQL = "SELECT * FROM FARMACIA WHERE USUARIO_id_usuario = ?;";
+            if($stmt=$db->prepare($SQL)){
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                $stmt->bind_result($farmaciaID, $usuarioID, $nome,
+                        $telComercial, $telCelular, $diasFuncionamento, $logradouro,
+                        $bairro, $cidade, $estado, $horaAbertura, $horaFechamento);
+                while($stmt->fetch()){
+                    $farmacia->id=$farmaciaID;
+                    $farmacia->usuarioID=$usuarioID;
+                    $farmacia->nome=$nome;
+                    $farmacia->telComercial=$telComercial;
+                    $farmacia->telCelular=$telCelular;
+                    $farmacia->diasFuncionamento=$diasFuncionamento;
+                    $farmacia->logradouro=$logradouro;
+                    $farmacia->bairro=$bairro;
+                    $farmacia->cidade=$cidade;
+                    $farmacia->estado=$estado;
+                    $farmacia->horaAbertura=$horaAbertura;
+                    $farmacia->horaFechamento=$horaFechamento;
+                }
+                $stmt->close();
+                return $farmacia;
+            }
+            
+        }
+        function insertOrcamento($SQL,$precoFormula,$precoEntrega,$dataEntrega,$delivery,
+                $usuarioFarmacia,$pedidoID,$farmaciaID){
+            
+            global $db;
+            if($stmt=$db->prepare($SQL)){
+//            echo "$usuarioFarmacia, $pedidoID, $farmaciaID, $precoFormula, $precoEntrega, $dataEntrega, $delivery";
+                $stmt->bind_param("iiiddsi", $usuarioFarmacia, $pedidoID, $farmaciaID,
+                        $precoFormula, $precoEntrega, $dataEntrega, $delivery);
+                $stmt->execute();
+                if($stmt->affected_rows>0) echo "Cadastro efetuado com sucesso";
+                else echo $stmt->error;
+                $stmt->close();
+                $db->close();
+            }
+            
+        }
         function popularSelectFarmacia(){
             global $db;
             $SQL = "SELECT id_farmacia, nm_farmacia"
@@ -385,6 +459,29 @@
                     echo '</tr>';
                 }
                 $stmt->close();
+            }
+        }
+        function selectOrcamentoByPedido($id){
+            global $db;
+            $orcamento = new stdClass();
+            
+            $SQL = "SELECT * FROM ORCAMENTO WHERE PEDIDO_id_pedido = ?";
+            if($stmt=$db->prepare($SQL)){
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                $stmt->bind_result($orcamentoID, $usuarioFarmacia, $pedidoID,
+                        $farmaciaID,$valorFormula,$valorEntrega,$dataPrevista,$delivery);
+                while($stmt->fetch()){
+                    $orcamento->orcamentoID = $orcamentoID;
+                    $orcamento->usuarioFarmacia = $usuarioFarmacia;
+                    $orcamento->pedidoID = $pedidoID;
+                    $orcamento->farmaciaID = $farmaciaID;
+                    $orcamento->valorFormula = $valorFormula;
+                    $orcamento->valorEntrega = $valorEntrega;
+                    $orcamento->dataPrevista = $dataPrevista;
+                    $orcamento->delivery = $delivery;
+                }
+                return $orcamento;
             }
         }
 ?>

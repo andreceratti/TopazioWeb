@@ -82,12 +82,15 @@
                     
                     <?php elseif(($_SESSION["usuario.tipo"]=='2')): ?>
                     
-                        <p>Area de Cliente</p>
-                        <span><a href="pedido/cadastrar.php"><p>Criar Pedido</p></a></span>
+                        <span><a href="pedido/cadastrar.php"><p>Fazer novo pedido</p></a></span>
+                        <span><a href="pedido/pesquisar.php"><p>Pesquisar Pedidos</p></a></span>
+                            
                         
                     <?php elseif(($_SESSION["usuario.tipo"]=='3')): ?>
                         
-                        <p>Area da Farmacia</p>                      
+                        <h3>Area da Farmacia</h3>
+                        <span><p><a href="orcamento/visualizar.php">Pesquisar Pedidos</a></p></span>
+                        <span><p>Orçamentos Feitos</p></span>
           
                         
                     <?php endif; ?>

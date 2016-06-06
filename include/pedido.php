@@ -1,4 +1,7 @@
 <?php
+    $pedido = new stdClass();
+    $cliente = new stdClass();
+
     $datahora = date('dmyHis');
     if(!empty($_FILES['arquivo'])){
         $nomeantigo = $_FILES['arquivo']['name'];
@@ -36,9 +39,9 @@
                             . " dt_abertura_pedido,"
                             . " ic_delivery_sim_nao, im_foto_receita,"
                             . " ds_status_pedidos, ic_forma_pagamento_dinheiro_cartao)"
-                            . " VALUES (?,?,NOW(),'0',?,'Esperando Orçamento',?);";
-                    $nomeCompleto = $nomearquivo.$tipo[1];
-                    insertPedido($SQL, $nomearquivo);
+                            . " VALUES (?,?,NOW(),'0',?,'Aberto',?);";
+                    $nomeCompleto = $nomearquivo.".".$tipo[1];
+                    insertPedido($SQL, $nomeCompleto);
                 } else {
                     echo 'Aviso: Tipo de arquivo incompativel<br>';
                 }
@@ -48,5 +51,17 @@
         } else {
             echo '<h3>Por favor selecione uma imagem para enviar</h3>';
         }
+    }
+    
+    function getPedidoByID(){
+        global $pedido;
+        if (!empty($_GET['id'])) $id = $_GET['id'];
+        else die ('ID NÃO ESPECIFICADO DO PEDIDO');
+        $pedido = selectPedido($id);
+        getCliente($pedido->idUsuario);
+    }
+    function getCliente($id){
+        global $cliente;
+        $cliente =  selectCliente($id);
     }
 ?>
