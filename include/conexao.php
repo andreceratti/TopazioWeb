@@ -1,13 +1,13 @@
 <?php
-        $servidor = "localhost";
-        $banco = "projetoTopazio";
-        $usuario_banco = "root";
-        $senha_banco = "";
+//        $servidor = "localhost";
+//        $banco = "projetoTopazio";
+//        $usuario_banco = "root";
+//        $senha_banco = "";
         
-//        $servidor = "mysql.hostinger.com.br";
-//        $banco = "u742772470_topaz";
-//        $usuario_banco = "u742772470_admin";
-//        $senha_banco = "topazio";
+        $servidor = "mysql.hostinger.com.br";
+        $banco = "u742772470_topaz";
+        $usuario_banco = "u742772470_admin";
+        $senha_banco = "topazio";
 
         $db = new mysqli($servidor,$usuario_banco,$senha_banco,$banco);
         if($db->connect_error){
