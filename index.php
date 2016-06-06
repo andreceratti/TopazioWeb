@@ -48,7 +48,9 @@
                             <p> Login: <input type="text" name="login"/> </p>
                             <p> Senha: <input type="password" name="senha"/> </p>
                             <input type="submit" value="Logar"/>
-                            <p><a href="cliente/cadastrar.php">Novo Cadastro</a></p>
+                            <p><a href="cliente/cadastrar.php">Novo Cadastro de Cliente</a></p>
+                            <p><a href="farmacia/cadastrar.php">Novo Cadastro de Farmacia</a></p>
+                            
                         </form>
 
                     <?php else: ?>
@@ -90,7 +92,7 @@
                         
                         <h3>Area da Farmacia</h3>
                         <span><p><a href="orcamento/visualizar.php">Pesquisar Pedidos</a></p></span>
-                        <span><p>Orçamentos Feitos</p></span>
+                        <!--<span><p>Orçamentos Feitos</p></span>-->
           
                         
                     <?php endif; ?>
