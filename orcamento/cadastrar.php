@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="../css/style.css" rel="stylesheet" type="text/css"/>
         <link href="../css/pedido.css" rel="stylesheet" type="text/css"/>
@@ -13,7 +14,7 @@
             getPedidoByID();
             $orcamento = selectOrcamentoByPedido($pedido->id);
         ?>
-        
+
         
     </head>
     <body>
